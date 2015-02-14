@@ -19,7 +19,6 @@ namespace DoctorsOnline.Models
         public DbSet<Thana> Thanas { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
-        public DbSet<Thana> Thanas { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<UserPassword> UserPassword { get; set; }
