@@ -161,10 +161,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AreasController.cs" />
-    <Compile Include="Controllers\DistrictsController.cs" />
+    <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ThanasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,21 +232,11 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Districts\Create.cshtml" />
-    <Content Include="Views\Districts\Delete.cshtml" />
-    <Content Include="Views\Districts\Details.cshtml" />
-    <Content Include="Views\Districts\Edit.cshtml" />
-    <Content Include="Views\Districts\Index.cshtml" />
-    <Content Include="Views\Thanas\Create.cshtml" />
-    <Content Include="Views\Thanas\Delete.cshtml" />
-    <Content Include="Views\Thanas\Details.cshtml" />
-    <Content Include="Views\Thanas\Edit.cshtml" />
-    <Content Include="Views\Thanas\Index.cshtml" />
-    <Content Include="Views\Areas\Create.cshtml" />
-    <Content Include="Views\Areas\Delete.cshtml" />
-    <Content Include="Views\Areas\Details.cshtml" />
-    <Content Include="Views\Areas\Edit.cshtml" />
-    <Content Include="Views\Areas\Index.cshtml" />
+    <Content Include="Views\DoctorsInfoes\Create.cshtml" />
+    <Content Include="Views\DoctorsInfoes\Delete.cshtml" />
+    <Content Include="Views\DoctorsInfoes\Details.cshtml" />
+    <Content Include="Views\DoctorsInfoes\Edit.cshtml" />
+    <Content Include="Views\DoctorsInfoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

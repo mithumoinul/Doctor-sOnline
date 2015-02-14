@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Model.DoctorsInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Doctors Information</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p> Find by Doctor's Name: @Html.TextBox("SearchString") 
+    <input type="submit" value="Search" /></p>
+}
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.ActionLink("Doctor Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+            @*@Html.DisplayNameFor(model => model.DoctorName)*@
+        </th>
+        <th>
+
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th>
+            @Html.ActionLink("Specialist", "Index", new { sortOrder = ViewBag.SpecialistSortParm })
+            @*@Html.DisplayNameFor(model => model.Specialist)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.ActionLink("VisitingTime", "Index", new { sortOrder = ViewBag.DateSortParm })
+            @*@Html.DisplayNameFor(model => model.VisitingTime)*@
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specialist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitingTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
