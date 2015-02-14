@@ -20,5 +20,7 @@ namespace DoctorsOnline.Models
         public DbSet<User> Users { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<UserPassword> UserPassword { get; set; }
+
+        public DbSet<Thana> Thanas { get; set; }
     }
 }
