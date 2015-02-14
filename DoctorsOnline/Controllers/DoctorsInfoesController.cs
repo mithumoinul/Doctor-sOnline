@@ -35,10 +35,10 @@ namespace DoctorsOnline.Controllers
                 case "name_desc": doctors.OrderByDescending(s => s.DoctorName);
                     break;
 
-                case "Date": doctors.OrderBy(s => s.VisitingTime);
+                case "Date": doctors.OrderBy(s => s.VisitStartTime);
                     break;
 
-                case "date_desc": doctors.OrderByDescending(s => s.VisitingTime);
+                case "date_desc": doctors.OrderByDescending(s => s.VisitStartTime);
                     break;
 
                 case "Specialist": doctors.OrderBy(s => s.Specialist);
@@ -82,7 +82,7 @@ namespace DoctorsOnline.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DoctorName,Qualification,Specialist,Gender,VisitingTime")] DoctorsInfo doctorsInfo)
+        public ActionResult Create([Bind(Include = "Id,DoctorName,Qualification,Specialist,Gender,VisitStartTime,VisitEndTime")] DoctorsInfo doctorsInfo)
         {
             if (ModelState.IsValid)
             {
@@ -95,6 +95,7 @@ namespace DoctorsOnline.Controllers
         }
 
         // GET: DoctorsInfoes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -126,6 +127,7 @@ namespace DoctorsOnline.Controllers
         }
 
         // GET: DoctorsInfoes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

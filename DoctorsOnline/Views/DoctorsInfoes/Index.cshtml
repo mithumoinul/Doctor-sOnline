@@ -36,7 +36,11 @@
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
-            @Html.ActionLink("VisitingTime", "Index", new { sortOrder = ViewBag.DateSortParm })
+            @Html.ActionLink("VisitStartTime", "Index", new { sortOrder = ViewBag.DateSortParm })
+            @*@Html.DisplayNameFor(model => model.VisitingTime)*@
+        </th>
+        <th>
+            @Html.ActionLink("VisitEndTime", "Index", new { sortOrder = ViewBag.DateSortParm })
             @*@Html.DisplayNameFor(model => model.VisitingTime)*@
         </th>
 
@@ -58,7 +62,10 @@
             @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.VisitingTime)
+            @Html.DisplayFor(modelItem => item.VisitStartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitEndTime)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
