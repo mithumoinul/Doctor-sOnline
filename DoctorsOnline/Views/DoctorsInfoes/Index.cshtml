@@ -9,28 +9,39 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p> Find by Doctor's Name: @Html.TextBox("SearchString") <input type="submit" value="Search" /></p>
+}
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Department.DepartmentName)
+            
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Hospital.HospitalName)
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DoctorName)
+            @*@Html.DisplayNameFor(model => model.DoctorName)*@
+            @Html.ActionLink("Doctor Name", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Qualification)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Specialist)
+            @*@Html.DisplayNameFor(model => model.Specialist)*@
+            @Html.ActionLink("Specialist", "Index", new { sortOrder = ViewBag.SpecialistSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.VisitStartTime)
+            @*@Html.DisplayNameFor(model => model.VisitStartTime)*@
+            @Html.ActionLink("VisitStartTime", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.VisitEndTime)
