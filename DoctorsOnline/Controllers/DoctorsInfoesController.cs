@@ -27,6 +27,7 @@ namespace DoctorsOnline.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
+
                 doctors = doctors.Where(s => s.DoctorName.ToUpper().Contains(searchString.ToUpper()));
             }
 
