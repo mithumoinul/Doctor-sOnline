@@ -4,54 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Doctors Information</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
-@using (Html.BeginForm())
-{
-    <p> Find by Doctor's Name: @Html.TextBox("SearchString") 
-    <input type="submit" value="Search" /></p>
-}
-
-
 <table class="table">
     <tr>
-
         <th>
-            @Html.ActionLink("Doctor Name", "Index", new { sortOrder = ViewBag.NameSortParm })
-            @*@Html.DisplayNameFor(model => model.DoctorName)*@
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
         </th>
         <th>
-
+            @Html.DisplayNameFor(model => model.Hospital.HospitalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Qualification)
         </th>
         <th>
-            @Html.ActionLink("Specialist", "Index", new { sortOrder = ViewBag.SpecialistSortParm })
-            @*@Html.DisplayNameFor(model => model.Specialist)*@
+            @Html.DisplayNameFor(model => model.Specialist)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
-            @Html.ActionLink("VisitStartTime", "Index", new { sortOrder = ViewBag.DateSortParm })
-            @*@Html.DisplayNameFor(model => model.VisitingTime)*@
+            @Html.DisplayNameFor(model => model.VisitStartTime)
         </th>
         <th>
-            @Html.ActionLink("VisitEndTime", "Index", new { sortOrder = ViewBag.DateSortParm })
-            @*@Html.DisplayNameFor(model => model.VisitingTime)*@
+            @Html.DisplayNameFor(model => model.VisitEndTime)
         </th>
-        <th>
-            
-        </th>
-
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hospital.HospitalName)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.DoctorName)
         </td>

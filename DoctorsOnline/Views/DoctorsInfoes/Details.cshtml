@@ -8,8 +8,24 @@
 
 <div>
     <h4>DoctorsInfo</h4>
-    <hr />
+	<hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hospital.HospitalName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hospital.HospitalName)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.DoctorName)
         </dt>
@@ -49,6 +65,7 @@
         <dd>
             @Html.DisplayFor(model => model.VisitStartTime)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.VisitEndTime)
         </dt>
@@ -56,6 +73,7 @@
         <dd>
             @Html.DisplayFor(model => model.VisitEndTime)
         </dd>
+
     </dl>
 </div>
 <p>
