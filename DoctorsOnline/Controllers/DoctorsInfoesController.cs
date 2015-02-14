@@ -16,9 +16,43 @@ namespace DoctorsOnline.Controllers
         private DoctorsOnlineContext db = new DoctorsOnlineContext();
 
         // GET: /DoctorsInfoes/
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewBag.SpecialistSortParm = sortOrder == "Specialist" ? "spe_des" : "Specialist";
+
             var doctorsinfos = db.DoctorsInfos.Include(d => d.Department).Include(d => d.Hospital);
+            
+            if (!String.IsNullOrEmpty(searchString))
+            {
+
+                doctorsinfos = doctorsinfos.Where(s => s.DoctorName.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc": doctorsinfos.OrderByDescending(s => s.DoctorName);
+                    break;
+
+                case "Date": doctorsinfos.OrderBy(s => s.VisitStartTime);
+                    break;
+
+                case "date_desc": doctorsinfos.OrderByDescending(s => s.VisitStartTime);
+                    break;
+
+                case "Specialist": doctorsinfos.OrderBy(s => s.Specialist);
+                    break;
+
+                case "spe_des": doctorsinfos.OrderByDescending(s => s.Specialist);
+                    break;
+
+                default:
+                    doctorsinfos.OrderBy(s => s.DoctorName);
+                    break;
+            }
+
+            
             return View(doctorsinfos.ToList());
         }
 
