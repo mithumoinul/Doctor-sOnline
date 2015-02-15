@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Model
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -27,8 +28,8 @@
         <p>
             Our online doctors are NHS accredited and work to the highest BD medical standards. They work together as a team from our London office and provide exceptional care.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
+        <p><input type="button" class="btn btn-default" title="Delete" value="Our Doctors" onclick="location.href='@Url.Action("Index", "DoctorsInfoes")'" /></p>
+</div>
     <div class="col-md-4">
         <h2>Online Prescription</h2>
         <p>We offer more than 20 online prescription servicess, the Superdrug Online Doctor offers services that enable you to order medication direct to your home, office or anywhere in the Bangladesh.</p>

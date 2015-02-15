@@ -182,6 +182,10 @@
     <Compile Include="Migrations\201502141311206_doctorsinfo3.Designer.cs">
       <DependentUpon>201502141311206_doctorsinfo3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502150937575_Hospital3.cs" />
+    <Compile Include="Migrations\201502150937575_Hospital3.Designer.cs">
+      <DependentUpon>201502150937575_Hospital3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -265,11 +269,6 @@
     <Content Include="Views\Thanas\Details.cshtml" />
     <Content Include="Views\Thanas\Edit.cshtml" />
     <Content Include="Views\Thanas\Index.cshtml" />
-    <Content Include="Views\Hospitals\Create.cshtml" />
-    <Content Include="Views\Hospitals\Delete.cshtml" />
-    <Content Include="Views\Hospitals\Details.cshtml" />
-    <Content Include="Views\Hospitals\Edit.cshtml" />
-    <Content Include="Views\Hospitals\Index.cshtml" />
     <Content Include="Views\DoctorsInfoes\Create.cshtml" />
     <Content Include="Views\DoctorsInfoes\Delete.cshtml" />
     <Content Include="Views\DoctorsInfoes\Details.cshtml" />
@@ -296,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502141311206_doctorsinfo3.resx">
       <DependentUpon>201502141311206_doctorsinfo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502150937575_Hospital3.resx">
+      <DependentUpon>201502150937575_Hospital3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
