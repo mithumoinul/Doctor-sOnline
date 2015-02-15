@@ -6,8 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using DoctorsOnline.Models;
 using Model;
+using DoctorsOnline.Models;
 
 namespace DoctorsOnline.Controllers
 {
@@ -15,13 +15,14 @@ namespace DoctorsOnline.Controllers
     {
         private DoctorsOnlineContext db = new DoctorsOnlineContext();
 
-        // GET: Hospitals
+        // GET: /Hospitals/
         public ActionResult Index()
         {
-            return View(db.Hospitals.ToList());
+            var hospitals = db.Hospitals.Include(h => h.Area);
+            return View(hospitals.ToList());
         }
 
-        // GET: Hospitals/Details/5
+        // GET: /Hospitals/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,18 +37,19 @@ namespace DoctorsOnline.Controllers
             return View(hospital);
         }
 
-        // GET: Hospitals/Create
+        // GET: /Hospitals/Create
         public ActionResult Create()
         {
+            ViewBag.AreaId = new SelectList(db.Areas, "Id", "AreaName");
             return View();
         }
 
-        // POST: Hospitals/Create
+        // POST: /Hospitals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,HospitalName,TotalDoctor,Compliance")] Hospital hospital)
+        public ActionResult Create([Bind(Include="Id,HospitalName,TotalDoctor,Address,Phone,AreaId")] Hospital hospital)
         {
             if (ModelState.IsValid)
             {
@@ -56,10 +58,11 @@ namespace DoctorsOnline.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.AreaId = new SelectList(db.Areas, "Id", "AreaName", hospital.AreaId);
             return View(hospital);
         }
 
-        // GET: Hospitals/Edit/5
+        // GET: /Hospitals/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -71,15 +74,16 @@ namespace DoctorsOnline.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AreaId = new SelectList(db.Areas, "Id", "AreaName", hospital.AreaId);
             return View(hospital);
         }
 
-        // POST: Hospitals/Edit/5
+        // POST: /Hospitals/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,HospitalName,TotalDoctor,Compliance")] Hospital hospital)
+        public ActionResult Edit([Bind(Include="Id,HospitalName,TotalDoctor,Address,Phone,AreaId")] Hospital hospital)
         {
             if (ModelState.IsValid)
             {
@@ -87,10 +91,11 @@ namespace DoctorsOnline.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AreaId = new SelectList(db.Areas, "Id", "AreaName", hospital.AreaId);
             return View(hospital);
         }
 
-        // GET: Hospitals/Delete/5
+        // GET: /Hospitals/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +110,7 @@ namespace DoctorsOnline.Controllers
             return View(hospital);
         }
 
-        // POST: Hospitals/Delete/5
+        // POST: /Hospitals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

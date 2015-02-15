@@ -13,7 +13,7 @@ namespace Model
         public string HospitalName { get; set; }
         public int TotalDoctor { get; set; }
         public string Address { get; set; }
-        public string Compliance { get; set; }
+        public string Phone { get; set; }
         public int AreaId { get; set; }
         [ForeignKey("AreaId")]
         public virtual Area Area { get; set; }
