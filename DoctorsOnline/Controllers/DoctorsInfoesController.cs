@@ -72,6 +72,7 @@ namespace DoctorsOnline.Controllers
         }
 
         // GET: /DoctorsInfoes/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName");
@@ -99,6 +100,7 @@ namespace DoctorsOnline.Controllers
         }
 
         // GET: /DoctorsInfoes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -134,6 +136,7 @@ namespace DoctorsOnline.Controllers
         }
 
         // GET: /DoctorsInfoes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
