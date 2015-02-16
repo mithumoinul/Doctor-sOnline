@@ -161,12 +161,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AreasController.cs" />
-    <Compile Include="Controllers\DistrictsController.cs" />
     <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HospitalsController.cs" />
-    <Compile Include="Controllers\ThanasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,17 +186,23 @@
     <Compile Include="Migrations\201502151305107_Hospital4.Designer.cs">
       <DependentUpon>201502151305107_Hospital4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502161729245_dbChanged.cs" />
+    <Compile Include="Migrations\201502161729245_dbChanged.Designer.cs">
+      <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
-    <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\Chamber.cs" />
+    <Compile Include="Models\Division.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\DoctorsInfo.cs" />
     <Compile Include="Models\DoctorsOnlineContext.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Thana.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInfo.cs" />
@@ -241,7 +243,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -258,31 +259,12 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Areas\Create.cshtml" />
-    <Content Include="Views\Areas\Delete.cshtml" />
-    <Content Include="Views\Areas\Details.cshtml" />
-    <Content Include="Views\Areas\Edit.cshtml" />
-    <Content Include="Views\Areas\Index.cshtml" />
-    <Content Include="Views\Districts\Create.cshtml" />
-    <Content Include="Views\Districts\Delete.cshtml" />
-    <Content Include="Views\Districts\Details.cshtml" />
-    <Content Include="Views\Districts\Edit.cshtml" />
-    <Content Include="Views\Districts\Index.cshtml" />
-    <Content Include="Views\Thanas\Create.cshtml" />
-    <Content Include="Views\Thanas\Delete.cshtml" />
-    <Content Include="Views\Thanas\Details.cshtml" />
-    <Content Include="Views\Thanas\Edit.cshtml" />
-    <Content Include="Views\Thanas\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\DoctorsInfoes\Create.cshtml" />
     <Content Include="Views\DoctorsInfoes\Delete.cshtml" />
     <Content Include="Views\DoctorsInfoes\Details.cshtml" />
     <Content Include="Views\DoctorsInfoes\Edit.cshtml" />
     <Content Include="Views\DoctorsInfoes\Index.cshtml" />
-    <Content Include="Views\Hospitals\Create.cshtml" />
-    <Content Include="Views\Hospitals\Delete.cshtml" />
-    <Content Include="Views\Hospitals\Details.cshtml" />
-    <Content Include="Views\Hospitals\Edit.cshtml" />
-    <Content Include="Views\Hospitals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -310,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502151305107_Hospital4.resx">
       <DependentUpon>201502151305107_Hospital4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502161729245_dbChanged.resx">
+      <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

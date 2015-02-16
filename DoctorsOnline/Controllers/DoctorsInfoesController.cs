@@ -16,43 +16,9 @@ namespace DoctorsOnline.Controllers
         private DoctorsOnlineContext db = new DoctorsOnlineContext();
 
         // GET: /DoctorsInfoes/
-        public ActionResult Index(string sortOrder, string searchString)
+        public ActionResult Index()
         {
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-            ViewBag.SpecialistSortParm = sortOrder == "Specialist" ? "spe_des" : "Specialist";
-
-            var doctorsinfos = db.DoctorsInfos.Include(d => d.Department).Include(d => d.Hospital);
-            
-            if (!String.IsNullOrEmpty(searchString))
-            {
-
-                doctorsinfos = doctorsinfos.Where(s => s.DoctorName.ToUpper().Contains(searchString.ToUpper()));
-            }
-
-            switch (sortOrder)
-            {
-                case "name_desc": doctorsinfos.OrderByDescending(s => s.DoctorName);
-                    break;
-
-                case "Date": doctorsinfos.OrderBy(s => s.VisitStartTime);
-                    break;
-
-                case "date_desc": doctorsinfos.OrderByDescending(s => s.VisitStartTime);
-                    break;
-
-                case "Specialist": doctorsinfos.OrderBy(s => s.Specialist);
-                    break;
-
-                case "spe_des": doctorsinfos.OrderByDescending(s => s.Specialist);
-                    break;
-
-                default:
-                    doctorsinfos.OrderBy(s => s.DoctorName);
-                    break;
-            }
-
-            
+            var doctorsinfos = db.DoctorsInfos.Include(d => d.Chamber).Include(d => d.Department).Include(d => d.Hospital);
             return View(doctorsinfos.ToList());
         }
 
@@ -72,9 +38,9 @@ namespace DoctorsOnline.Controllers
         }
 
         // GET: /DoctorsInfoes/Create
-        //[Authorize]
         public ActionResult Create()
         {
+            ViewBag.ChamberId = new SelectList(db.Chambers, "Id", "ChamberName");
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName");
             ViewBag.HospitalId = new SelectList(db.Hospitals, "Id", "HospitalName");
             return View();
@@ -85,7 +51,7 @@ namespace DoctorsOnline.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,DoctorName,Qualification,Specialist,Gender,VisitStartTime,VisitEndTime,HospitalId,DepartmentId")] DoctorsInfo doctorsinfo)
+        public ActionResult Create([Bind(Include="Id,DoctorName,Qualification,Designation,Gender,Phone,Email,VisitStartTime,VisitEndTime,HospitalId,DepartmentId,ChamberId")] DoctorsInfo doctorsinfo)
         {
             if (ModelState.IsValid)
             {
@@ -94,13 +60,13 @@ namespace DoctorsOnline.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ChamberId = new SelectList(db.Chambers, "Id", "ChamberName", doctorsinfo.ChamberId);
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", doctorsinfo.DepartmentId);
             ViewBag.HospitalId = new SelectList(db.Hospitals, "Id", "HospitalName", doctorsinfo.HospitalId);
             return View(doctorsinfo);
         }
 
         // GET: /DoctorsInfoes/Edit/5
-        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -112,6 +78,7 @@ namespace DoctorsOnline.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ChamberId = new SelectList(db.Chambers, "Id", "ChamberName", doctorsinfo.ChamberId);
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", doctorsinfo.DepartmentId);
             ViewBag.HospitalId = new SelectList(db.Hospitals, "Id", "HospitalName", doctorsinfo.HospitalId);
             return View(doctorsinfo);
@@ -122,7 +89,7 @@ namespace DoctorsOnline.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,DoctorName,Qualification,Specialist,Gender,VisitStartTime,VisitEndTime,HospitalId,DepartmentId")] DoctorsInfo doctorsinfo)
+        public ActionResult Edit([Bind(Include="Id,DoctorName,Qualification,Designation,Gender,Phone,Email,VisitStartTime,VisitEndTime,HospitalId,DepartmentId,ChamberId")] DoctorsInfo doctorsinfo)
         {
             if (ModelState.IsValid)
             {
@@ -130,13 +97,13 @@ namespace DoctorsOnline.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ChamberId = new SelectList(db.Chambers, "Id", "ChamberName", doctorsinfo.ChamberId);
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName", doctorsinfo.DepartmentId);
             ViewBag.HospitalId = new SelectList(db.Hospitals, "Id", "HospitalName", doctorsinfo.HospitalId);
             return View(doctorsinfo);
         }
 
         // GET: /DoctorsInfoes/Delete/5
-        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

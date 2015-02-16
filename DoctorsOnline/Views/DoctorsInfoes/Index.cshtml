@@ -9,39 +9,37 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
-@using (Html.BeginForm())
-{
-    <p> Find by Doctor's Name: @Html.TextBox("SearchString") <input type="submit" value="Search" /></p>
-}
-
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Chamber.ChamberName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Department.DepartmentName)
-            
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Hospital.HospitalName)
-
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.DoctorName)*@
-            @Html.ActionLink("Doctor Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+            @Html.DisplayNameFor(model => model.DoctorName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Qualification)
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.Specialist)*@
-            @Html.ActionLink("Specialist", "Index", new { sortOrder = ViewBag.SpecialistSortParm })
+            @Html.DisplayNameFor(model => model.Designation)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.VisitStartTime)*@
-            @Html.ActionLink("VisitStartTime", "Index", new { sortOrder = ViewBag.DateSortParm })
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitStartTime)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.VisitEndTime)
@@ -51,6 +49,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chamber.ChamberName)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Department.DepartmentName)
         </td>
@@ -64,10 +65,16 @@
             @Html.DisplayFor(modelItem => item.Qualification)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Specialist)
+            @Html.DisplayFor(modelItem => item.Designation)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.VisitStartTime)

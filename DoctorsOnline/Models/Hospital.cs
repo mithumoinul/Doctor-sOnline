@@ -12,13 +12,13 @@ namespace Model
         public int Id { get; set; }
         public string HospitalName { get; set; }
         public int TotalDoctor { get; set; }
-        public string Address { get; set; }
         public string Phone { get; set; }
-        public int AreaId { get; set; }
-        [ForeignKey("AreaId")]
-        public virtual Area Area { get; set; }
+        public string Email { get; set; }
+        public int LocationId { get; set; }
+        [ForeignKey("LocationId")]
+        public virtual Location Location { get; set; }
+        public virtual ICollection<Appointment> Appointments { get; set; }
         public virtual ICollection<DoctorsInfo> DoctorsInfos { get; set; }
-        public virtual ICollection<Patient> Patients { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
 
     }

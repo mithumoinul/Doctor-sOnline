@@ -34,10 +34,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Specialist, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Designation, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Specialist)
-                @Html.ValidationMessageFor(model => model.Specialist)
+                @Html.EditorFor(model => model.Designation)
+                @Html.ValidationMessageFor(model => model.Designation)
             </div>
         </div>
 
@@ -46,6 +46,22 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Gender)
                 @Html.ValidationMessageFor(model => model.Gender)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone)
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
             </div>
         </div>
 
@@ -78,6 +94,14 @@
             <div class="col-md-10">
                 @Html.DropDownList("DepartmentId", String.Empty)
                 @Html.ValidationMessageFor(model => model.DepartmentId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChamberId, "ChamberId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ChamberId", String.Empty)
+                @Html.ValidationMessageFor(model => model.ChamberId)
             </div>
         </div>
 
