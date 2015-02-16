@@ -72,7 +72,7 @@ namespace DoctorsOnline.Controllers
         }
 
         // GET: /DoctorsInfoes/Create
-        [Authorize]
+        //[Authorize]
         public ActionResult Create()
         {
             ViewBag.DepartmentId = new SelectList(db.Departments, "Id", "DepartmentName");
