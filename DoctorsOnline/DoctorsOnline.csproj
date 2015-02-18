@@ -194,18 +194,22 @@
     <Compile Include="Migrations\201502181554084_fg.Designer.cs">
       <DependentUpon>201502181554084_fg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502181600076_location1.cs" />
+    <Compile Include="Migrations\201502181600076_location1.Designer.cs">
+      <DependentUpon>201502181600076_location1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Chamber.cs" />
     <Compile Include="Models\Division.cs" />
-    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\DoctorsInfo.cs" />
     <Compile Include="Models\DoctorsOnlineContext.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Thana.cs" />
     <Compile Include="Models\User.cs" />
@@ -302,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502181554084_fg.resx">
       <DependentUpon>201502181554084_fg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502181600076_location1.resx">
+      <DependentUpon>201502181600076_location1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
