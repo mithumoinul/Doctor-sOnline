@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201502161729245_dbChanged.Designer.cs">
       <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502181554084_fg.cs" />
+    <Compile Include="Migrations\201502181554084_fg.Designer.cs">
+      <DependentUpon>201502181554084_fg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -295,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502161729245_dbChanged.resx">
       <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502181554084_fg.resx">
+      <DependentUpon>201502181554084_fg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
