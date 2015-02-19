@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201502181600076_location1.Designer.cs">
       <DependentUpon>201502181600076_location1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502190731272_deleteFullName.cs" />
+    <Compile Include="Migrations\201502190731272_deleteFullName.Designer.cs">
+      <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -309,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502181600076_location1.resx">
       <DependentUpon>201502181600076_location1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502190731272_deleteFullName.resx">
+      <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

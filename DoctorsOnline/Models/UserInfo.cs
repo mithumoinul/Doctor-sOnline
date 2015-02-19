@@ -12,7 +12,7 @@ namespace Model
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; set; }
+        //public string FullName { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
         public int NId { get; set; }
@@ -24,6 +24,7 @@ namespace Model
 
         public int UserId { get; set; }
         [ForeignKey("UserId")]
+
         public virtual User User { get; set; }
         //public Guid MemberID { get; set; }
     }
