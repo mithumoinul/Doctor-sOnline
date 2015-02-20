@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PrescriptionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +203,10 @@
     <Compile Include="Migrations\201502190731272_deleteFullName.Designer.cs">
       <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502200546489_Patient.cs" />
+    <Compile Include="Migrations\201502200546489_Patient.Designer.cs">
+      <DependentUpon>201502200546489_Patient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -215,6 +220,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Thana.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInfo.cs" />
@@ -277,6 +283,11 @@
     <Content Include="Views\DoctorsInfoes\Details.cshtml" />
     <Content Include="Views\DoctorsInfoes\Edit.cshtml" />
     <Content Include="Views\DoctorsInfoes\Index.cshtml" />
+    <Content Include="Views\Prescriptions\Create.cshtml" />
+    <Content Include="Views\Prescriptions\Delete.cshtml" />
+    <Content Include="Views\Prescriptions\Details.cshtml" />
+    <Content Include="Views\Prescriptions\Edit.cshtml" />
+    <Content Include="Views\Prescriptions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502190731272_deleteFullName.resx">
       <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502200546489_Patient.resx">
+      <DependentUpon>201502200546489_Patient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
