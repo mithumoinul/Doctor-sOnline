@@ -163,9 +163,49 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\PrescriptionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502140737085_endtimeadded.cs" />
+    <Compile Include="Migrations\201502140737085_endtimeadded.Designer.cs">
+      <DependentUpon>201502140737085_endtimeadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502141249329_doctorsinfo2.cs" />
+    <Compile Include="Migrations\201502141249329_doctorsinfo2.Designer.cs">
+      <DependentUpon>201502141249329_doctorsinfo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502141311206_doctorsinfo3.cs" />
+    <Compile Include="Migrations\201502141311206_doctorsinfo3.Designer.cs">
+      <DependentUpon>201502141311206_doctorsinfo3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502150937575_Hospital3.cs" />
+    <Compile Include="Migrations\201502150937575_Hospital3.Designer.cs">
+      <DependentUpon>201502150937575_Hospital3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502151305107_Hospital4.cs" />
+    <Compile Include="Migrations\201502151305107_Hospital4.Designer.cs">
+      <DependentUpon>201502151305107_Hospital4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502161729245_dbChanged.cs" />
+    <Compile Include="Migrations\201502161729245_dbChanged.Designer.cs">
+      <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502181554084_fg.cs" />
+    <Compile Include="Migrations\201502181554084_fg.Designer.cs">
+      <DependentUpon>201502181554084_fg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502181600076_location1.cs" />
+    <Compile Include="Migrations\201502181600076_location1.Designer.cs">
+      <DependentUpon>201502181600076_location1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502190731272_deleteFullName.cs" />
+    <Compile Include="Migrations\201502190731272_deleteFullName.Designer.cs">
+      <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502200546489_Patient.cs" />
+    <Compile Include="Migrations\201502200546489_Patient.Designer.cs">
+      <DependentUpon>201502200546489_Patient.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -178,10 +218,9 @@
     <Compile Include="Models\DoctorsOnlineContext.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ILocationRepository.cs" />
-    <Compile Include="Models\LocationModel.cs" />
-    <Compile Include="Models\LocationRepository.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Thana.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInfo.cs" />
@@ -196,7 +235,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\banner-appointment.png" />
-    <Content Include="Content\Images\Doctor.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -245,7 +283,11 @@
     <Content Include="Views\DoctorsInfoes\Details.cshtml" />
     <Content Include="Views\DoctorsInfoes\Edit.cshtml" />
     <Content Include="Views\DoctorsInfoes\Index.cshtml" />
-    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\Prescriptions\Create.cshtml" />
+    <Content Include="Views\Prescriptions\Delete.cshtml" />
+    <Content Include="Views\Prescriptions\Details.cshtml" />
+    <Content Include="Views\Prescriptions\Edit.cshtml" />
+    <Content Include="Views\Prescriptions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -257,6 +299,38 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502140737085_endtimeadded.resx">
+      <DependentUpon>201502140737085_endtimeadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502141249329_doctorsinfo2.resx">
+      <DependentUpon>201502141249329_doctorsinfo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502141311206_doctorsinfo3.resx">
+      <DependentUpon>201502141311206_doctorsinfo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502150937575_Hospital3.resx">
+      <DependentUpon>201502150937575_Hospital3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502151305107_Hospital4.resx">
+      <DependentUpon>201502151305107_Hospital4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502161729245_dbChanged.resx">
+      <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502181554084_fg.resx">
+      <DependentUpon>201502181554084_fg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502181600076_location1.resx">
+      <DependentUpon>201502181600076_location1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502190731272_deleteFullName.resx">
+      <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502200546489_Patient.resx">
+      <DependentUpon>201502200546489_Patient.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

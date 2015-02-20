@@ -37,6 +37,8 @@ namespace DoctorsOnline.Models
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
         }
+
+        public System.Data.Entity.DbSet<DoctorsOnline.Models.Prescription> Prescriptions { get; set; }
     }
 
     
