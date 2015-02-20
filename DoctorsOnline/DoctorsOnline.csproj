@@ -218,7 +218,6 @@
     <Compile Include="Models\DoctorsOnlineContext.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Thana.cs" />
