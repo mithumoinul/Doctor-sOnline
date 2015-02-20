@@ -12,6 +12,7 @@ namespace Model
 {
     public class DoctorsInfo
     {
+     
         public int Id { get; set; }
         public string DoctorName { get; set; }
         public string Qualification { get; set; }
@@ -41,6 +42,7 @@ namespace Model
         public virtual Chamber Chamber { get; set; }
         
         public virtual ICollection<Appointment> Appointments { get; set; }
+
 
     }
 

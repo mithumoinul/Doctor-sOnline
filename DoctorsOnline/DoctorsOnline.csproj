@@ -161,46 +161,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502140737085_endtimeadded.cs" />
-    <Compile Include="Migrations\201502140737085_endtimeadded.Designer.cs">
-      <DependentUpon>201502140737085_endtimeadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502141249329_doctorsinfo2.cs" />
-    <Compile Include="Migrations\201502141249329_doctorsinfo2.Designer.cs">
-      <DependentUpon>201502141249329_doctorsinfo2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502141311206_doctorsinfo3.cs" />
-    <Compile Include="Migrations\201502141311206_doctorsinfo3.Designer.cs">
-      <DependentUpon>201502141311206_doctorsinfo3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502150937575_Hospital3.cs" />
-    <Compile Include="Migrations\201502150937575_Hospital3.Designer.cs">
-      <DependentUpon>201502150937575_Hospital3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502151305107_Hospital4.cs" />
-    <Compile Include="Migrations\201502151305107_Hospital4.Designer.cs">
-      <DependentUpon>201502151305107_Hospital4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502161729245_dbChanged.cs" />
-    <Compile Include="Migrations\201502161729245_dbChanged.Designer.cs">
-      <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502181554084_fg.cs" />
-    <Compile Include="Migrations\201502181554084_fg.Designer.cs">
-      <DependentUpon>201502181554084_fg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502181600076_location1.cs" />
-    <Compile Include="Migrations\201502181600076_location1.Designer.cs">
-      <DependentUpon>201502181600076_location1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502190731272_deleteFullName.cs" />
-    <Compile Include="Migrations\201502190731272_deleteFullName.Designer.cs">
-      <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -277,10 +242,14 @@
     <Content Include="Views\DoctorsInfoes\Details.cshtml" />
     <Content Include="Views\DoctorsInfoes\Edit.cshtml" />
     <Content Include="Views\DoctorsInfoes\Index.cshtml" />
+    <Content Include="Views\Appointments\Create.cshtml" />
+    <Content Include="Views\Appointments\Delete.cshtml" />
+    <Content Include="Views\Appointments\Details.cshtml" />
+    <Content Include="Views\Appointments\Edit.cshtml" />
+    <Content Include="Views\Appointments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Appointment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -288,35 +257,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502140737085_endtimeadded.resx">
-      <DependentUpon>201502140737085_endtimeadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502141249329_doctorsinfo2.resx">
-      <DependentUpon>201502141249329_doctorsinfo2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502141311206_doctorsinfo3.resx">
-      <DependentUpon>201502141311206_doctorsinfo3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502150937575_Hospital3.resx">
-      <DependentUpon>201502150937575_Hospital3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502151305107_Hospital4.resx">
-      <DependentUpon>201502151305107_Hospital4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502161729245_dbChanged.resx">
-      <DependentUpon>201502161729245_dbChanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502181554084_fg.resx">
-      <DependentUpon>201502181554084_fg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502181600076_location1.resx">
-      <DependentUpon>201502181600076_location1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502190731272_deleteFullName.resx">
-      <DependentUpon>201502190731272_deleteFullName.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

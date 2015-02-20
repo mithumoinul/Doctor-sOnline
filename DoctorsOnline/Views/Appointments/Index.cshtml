@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Model.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Chamber.ChamberName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hospital.HospitalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chamber.ChamberName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hospital.HospitalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppointmentNo)
+        </td>
+        <td>
+            @*@{var val = item.AppointmentDate.ToLongDateString();
+            Html.DisplayFor(modelItem => val);*@
+            }
+            @*@Html.DisplayFor(m => m.MyDateTime, "ShortDateTime")*@
+            @Html.DisplayFor(modelItem => item.AppointmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppointmentTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
