@@ -13,7 +13,7 @@ namespace DoctorsOnline.Models
         public string ChamberName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public virtual Location Location { get; set; }
+        //public virtual Location Location { get; set; }
         public virtual ICollection<DoctorsInfo> DoctorsInfos { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
     }

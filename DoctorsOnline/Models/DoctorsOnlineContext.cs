@@ -10,8 +10,8 @@ namespace DoctorsOnline.Models
 {
     public class DoctorsOnlineContext  : DbContext
     {
-        public DbSet<Appointment> Appointments { get; set; }
-        public DbSet<Location> Locations { get; set; }
+        public DbSet<Appointment> Appointments { get; set; } 
+        //public DbSet<LocationModel> LocationModels { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<District> Districts { get; set; }
         public DbSet<Division> Divisions { get; set; } 
@@ -26,10 +26,16 @@ namespace DoctorsOnline.Models
         public DbSet<UserPassword> UserPassword { get; set; }
 
 
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        //    //base.OnModelCreating(modelBuilder);
+        //}
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            //base.OnModelCreating(modelBuilder);
+
         }
     }
 
