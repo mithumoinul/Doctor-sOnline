@@ -164,6 +164,7 @@
     <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PrescriptionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,8 +179,8 @@
     <Compile Include="Models\DoctorsOnlineContext.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Thana.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInfo.cs" />
@@ -242,11 +243,6 @@
     <Content Include="Views\DoctorsInfoes\Details.cshtml" />
     <Content Include="Views\DoctorsInfoes\Edit.cshtml" />
     <Content Include="Views\DoctorsInfoes\Index.cshtml" />
-    <Content Include="Views\Appointments\Create.cshtml" />
-    <Content Include="Views\Appointments\Delete.cshtml" />
-    <Content Include="Views\Appointments\Details.cshtml" />
-    <Content Include="Views\Appointments\Edit.cshtml" />
-    <Content Include="Views\Appointments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
