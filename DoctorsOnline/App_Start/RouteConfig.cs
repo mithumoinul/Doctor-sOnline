@@ -18,6 +18,9 @@ namespace DoctorsOnline
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute("GetDistrictByDivisionId", "location/getdistrictbydivisionid",
+                new { Controller = "Location", action = "GetDistrictByDivisionId" },
+                new[] {"DoctorsOnline.Controller"});
         }
     }
 }

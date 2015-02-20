@@ -28,7 +28,9 @@ namespace Model
         [Display(Name = "AppointmentTime")]
         public DateTime AppointmentTime { get; set; }
         public bool IsActive { get; set; }
-        //public virtual DoctorsInfo DoctorsInfo { get; set; }
+        public int DoctorsInfoId { get; set; }
+        [ForeignKey("DoctorsInfoId")]
+        public virtual DoctorsInfo DoctorsInfo { get; set; }
         public int HospitalId { get; set; }
         [ForeignKey("HospitalId")]
         public virtual Hospital Hospital { get; set; }

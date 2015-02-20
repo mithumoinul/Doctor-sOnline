@@ -15,9 +15,9 @@ namespace Model
         public int TotalDoctor { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public int LocationId { get; set; }
-        [ForeignKey("LocationId")]
-        public virtual Location Location { get; set; }
+        //public int LocationId { get; set; }
+        //[ForeignKey("LocationId")]
+        //public virtual Location Location { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
         public virtual ICollection<DoctorsInfo> DoctorsInfos { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
