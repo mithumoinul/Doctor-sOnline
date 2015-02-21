@@ -16,9 +16,7 @@ namespace Model
         [ForeignKey("DivisionId")]
         public Division Division { get; set; }
         public virtual ICollection<Thana> Thanas { get; set; }
-        public int LocationId { get; set; }
-        [ForeignKey("LocationId")]
-        public virtual Location Location { get; set; }
+        public ICollection<Location> Locations { get; set; }
     }
 
 }

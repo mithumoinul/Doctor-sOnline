@@ -169,12 +169,15 @@
     <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalsController.cs" />
-    <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
     <Compile Include="Controllers\PrescriptionController.cs" />
     <Compile Include="Controllers\ThanasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502211633035_location.cs" />
+    <Compile Include="Migrations\201502211633035_location.Designer.cs">
+      <DependentUpon>201502211633035_location.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,11 +295,6 @@
     <Content Include="Views\Prescription\Details.cshtml" />
     <Content Include="Views\Prescription\Edit.cshtml" />
     <Content Include="Views\Prescription\Index.cshtml" />
-    <Content Include="Views\Location\Index.cshtml" />
-    <Content Include="Views\Location\Create.cshtml" />
-    <Content Include="Views\Location\Delete.cshtml" />
-    <Content Include="Views\Location\Details.cshtml" />
-    <Content Include="Views\Location\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -307,6 +305,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502211633035_location.resx">
+      <DependentUpon>201502211633035_location.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

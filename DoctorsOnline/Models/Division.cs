@@ -12,8 +12,8 @@ namespace DoctorsOnline.Models
         public int DivisionId { get; set; }
         public string DivisionName { get; set; }
         public virtual ICollection<District> Districts { get; set; }
-        public int LocationId { get; set; }
-        [ForeignKey("LocationId")]
-        public Location Location { get; set; }
+        //public int LocationId { get; set; }
+        //[ForeignKey("LocationId")]
+        public ICollection<Location> Locations { get; set; }
     }
 }

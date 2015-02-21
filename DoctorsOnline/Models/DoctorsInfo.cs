@@ -40,7 +40,7 @@ namespace Model
         public int ChamberId { get; set; }
         [ForeignKey("ChamberId")]
         public virtual Chamber Chamber { get; set; }
-        
+        public ICollection<Location> Locations { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
 
 
