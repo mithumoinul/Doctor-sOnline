@@ -170,7 +170,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalsController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
-    <Compile Include="Controllers\PrescriptionsController.cs" />
+    <Compile Include="Controllers\PrescriptionController.cs" />
     <Compile Include="Controllers\ThanasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -285,6 +285,11 @@
     <Content Include="Views\Thanas\Details.cshtml" />
     <Content Include="Views\Thanas\Edit.cshtml" />
     <Content Include="Views\Thanas\Index.cshtml" />
+    <Content Include="Views\Prescription\Create.cshtml" />
+    <Content Include="Views\Prescription\Delete.cshtml" />
+    <Content Include="Views\Prescription\Details.cshtml" />
+    <Content Include="Views\Prescription\Edit.cshtml" />
+    <Content Include="Views\Prescription\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
