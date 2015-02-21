@@ -1,46 +1,33 @@
-﻿@model DoctorsOnline.Models.LocationModel
+﻿@model IEnumerable<DoctorsOnline.Models.Location>
+
 @{
     ViewBag.Title = "Index";
 }
 
-@*<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/jquery-1.10.2.min.js"></script>*@
-<script type="text/javascript">
-    $(function() {
-        $("#DivisionId").change(function() {
-            var selectedItem = $(this).val();
-            var ddlDist = $("#DistrictId");
-            var districtProgress = $("#district-loading-progress");
-            districtProgress.show();
-            $.ajax({
-                cache: false,
-                type: "GET",
-                url: "@(Url.RouteUrl("GetDistrictByDivisionId"))",
-                data: { "divisionId": selectedItem },
-                success: function(data) {
-                    ddlDist.html('');
-                    $.each(data, function(id, option) {
-                        ddlDist.append($('<option></option>').val(option.id).html(option.name));
-                    });
-                    districtProgress.hide();
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert('Failed to retrieve Districts.');
-                    districtProgress.hide();
-                }
-            });
-        });
-    })
-</script>
+<h2>Index</h2>
 
-    @Html.LabelFor(model => model.DivisionId)
-    @Html.DropDownListFor(model => model.DivisionId, Model.AvailableDivisions)
-    
-    <br />
-    @Html.LabelFor(model => model.DistrictId)
-    @Html.DropDownListFor(model => model.DistrictId, Model.AvailableDistricts)
-    <br />
-    @Html.LabelFor(model => model.ThanaId)
-    @Html.DropDownListFor(model => model.ThanaId, Model.AvailableThanas)
-    <span id="states‐loading‐progress" style="display: none;">Please wait..</span>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th></th>
+    </tr>
 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
+</table>

@@ -14,7 +14,8 @@ namespace DoctorsOnline.Models
         //public DbSet<LocationModel> LocationModels { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<District> Districts { get; set; }
-        public DbSet<Division> Divisions { get; set; } 
+        public DbSet<Division> Divisions { get; set; }
+        public DbSet<Location> Locations { get; set; }
         public DbSet<DoctorsInfo> DoctorsInfos { get; set; }
         public DbSet<Organization> Organizations { get; set; } 
         public DbSet<Hospital> Hospitals { get; set; }

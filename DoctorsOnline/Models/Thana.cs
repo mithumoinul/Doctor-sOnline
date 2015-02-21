@@ -15,9 +15,9 @@ namespace Model
         public int DistrictId { get; set; }
         [ForeignKey("DistrictId")]
         public virtual District District { get; set; }
-        //public int LocationId { get; set; }
-        //[ForeignKey("LocationId")]
-        //public virtual Location Location { get; set; }
+        public int LocationId { get; set; }
+        [ForeignKey("LocationId")]
+        public virtual Location Location { get; set; }
     }
 
 }

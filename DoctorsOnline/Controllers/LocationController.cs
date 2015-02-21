@@ -1,165 +1,127 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
-using System.Security.Cryptography;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DoctorsOnline.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace DoctorsOnline.Controllers
 {
     public class LocationController : Controller
     {
-        private ILocationRepository _repository;
+        private DoctorsOnlineContext db = new DoctorsOnlineContext();
 
-        public LocationController()
-            : this(new LocationRepository())
-        {
-
-        }
-
-        public LocationController(ILocationRepository repository)
-        {
-            _repository = repository;
-        }
-        //
         // GET: /Location/
         public ActionResult Index()
         {
-            LocationModel model = new LocationModel();
-            model.AvailableDivisions.Add(new SelectListItem{Text = "--Select Items--",Value = "Selects Item"});
-            var divisions = _repository.GetAllDivisions();
-            foreach (var division in divisions)
-            {
-                model.AvailableDivisions.Add(new SelectListItem()
-                {
-                    Text = division.DivisionName,
-                    Value = division.DivisionId.ToString()
-                });
-            }
-            return View(model);
+            return View(db.Locations.ToList());
         }
 
-        [HttpGet]
-        public ActionResult GetAllDistrictsByDivisionId(string divisionId)
+        // GET: /Location/Details/5
+        public ActionResult Details(int? id)
         {
-            if (String.IsNullOrEmpty(divisionId))
+            if (id == null)
             {
-                throw new ArgumentNullException(divisionId);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            int id = 0;
-            bool isValid = Int32.TryParse(divisionId, out id);
-            var district = _repository.GetAllDistrictsByDivisionId(id);
-            var result = (from d in district
-                select new
-                {
-                    Id = d.Id,
-                    //divisionId = d.Id,
-                    DistrictName = d.DistrictName
-                }).ToList();
-            return Json(result, JsonRequestBehavior.AllowGet);
+            Location location = db.Locations.Find(id);
+            if (location == null)
+            {
+                return HttpNotFound();
+            }
+            return View(location);
         }
-        [HttpGet]
-        public ActionResult GetAllThanasByDistrictId(string districtId)
+
+        // GET: /Location/Create
+        public ActionResult Create()
         {
-            if (String.IsNullOrEmpty(districtId))
-            {
-                throw new ArgumentNullException(districtId);
-            }
-            int tId = 0;
-            bool isValid = Int32.TryParse(districtId, out tId);
-            var thana = _repository.GetAllThanasByDistrictId(tId);
-            var result = (from t in thana
-                select new
-                {
-                    thanaId = t.Id,
-                    thanaName = t.ThanaName
-                }).ToList();
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return View();
         }
 
+        // POST: /Location/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include="Id,LocationName")] Location location)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Locations.Add(location);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
+            return View(location);
+        }
 
+        // GET: /Location/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Location location = db.Locations.Find(id);
+            if (location == null)
+            {
+                return HttpNotFound();
+            }
+            return View(location);
+        }
 
+        // POST: /Location/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include="Id,LocationName")] Location location)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(location).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(location);
+        }
 
-        ////
-        //// GET: /Location/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
+        // GET: /Location/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Location location = db.Locations.Find(id);
+            if (location == null)
+            {
+                return HttpNotFound();
+            }
+            return View(location);
+        }
 
-        ////
-        //// GET: /Location/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
+        // POST: /Location/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Location location = db.Locations.Find(id);
+            db.Locations.Remove(location);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-        ////
-        //// POST: /Location/Create
-        //[HttpPost]
-        //public ActionResult Create(FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        ////
-        //// GET: /Location/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
-
-        ////
-        //// POST: /Location/Edit/5
-        //[HttpPost]
-        //public ActionResult Edit(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add update logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        ////
-        //// GET: /Location/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
-
-        ////
-        //// POST: /Location/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
