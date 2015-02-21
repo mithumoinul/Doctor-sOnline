@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace DoctorsOnline.Models
 {
     public class Location
     {
+        [Key]
         public int Id { get; set; }
         public string LocationName { get; set; }
         public int DoctorsInfoId { get; set; }
