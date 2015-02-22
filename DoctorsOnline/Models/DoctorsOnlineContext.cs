@@ -22,7 +22,7 @@ namespace DoctorsOnline.Models
         public DbSet<Chamber> Chambers { get; set; } 
         public DbSet<Thana> Thanas { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
-
+        public DbSet<Prescription> Prescriptions { get; set; } 
         public DbSet<UserPassword> UserPassword { get; set; }
 
 
@@ -38,7 +38,6 @@ namespace DoctorsOnline.Models
 
         }
 
-        public System.Data.Entity.DbSet<DoctorsOnline.Models.Prescription> Prescriptions { get; set; }
     }
 
     
