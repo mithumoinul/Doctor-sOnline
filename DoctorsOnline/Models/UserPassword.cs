@@ -13,7 +13,6 @@ namespace Model
         public int SlNo { get; set; }
         public string Password { get; set; }
         public DateTime CreateDate { get; set; }
-
         
     }
 
