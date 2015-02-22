@@ -14,12 +14,7 @@ namespace Model
         public string Password { get; set; }
         public DateTime CreateDate { get; set; }
 
-        public int UserId { get; set; }
-
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
-
-
+        
     }
 
 }

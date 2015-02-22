@@ -17,7 +17,7 @@ namespace Model
         public DateTime CreateDate { get; set; }
         public DateTime ActionDate { get; set; }
         public bool IsActive { get; set; }
-        public User User { get; set; }
+        
 
     }
 
