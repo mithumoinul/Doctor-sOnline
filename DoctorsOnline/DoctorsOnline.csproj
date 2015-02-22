@@ -180,6 +180,10 @@
     <Compile Include="Migrations\201502211646427_Db1.Designer.cs">
       <DependentUpon>201502211646427_Db1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502221351266_registration.cs" />
+    <Compile Include="Migrations\201502221351266_registration.Designer.cs">
+      <DependentUpon>201502221351266_registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -315,6 +319,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502211646427_Db1.resx">
       <DependentUpon>201502211646427_Db1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502221351266_registration.resx">
+      <DependentUpon>201502221351266_registration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
