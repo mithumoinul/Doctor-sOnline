@@ -7,13 +7,13 @@ namespace DoctorsOnline.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class registration3 : IMigrationMetadata
+    public sealed partial class dbupdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(registration3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(dbupdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201502221443266_registration3"; }
+            get { return "201502230706467_dbupdate"; }
         }
         
         string IMigrationMetadata.Source

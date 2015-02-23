@@ -176,17 +176,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502211646427_Db1.cs" />
-    <Compile Include="Migrations\201502211646427_Db1.Designer.cs">
-      <DependentUpon>201502211646427_Db1.cs</DependentUpon>
+    <Compile Include="Migrations\201502230641137_pr.cs" />
+    <Compile Include="Migrations\201502230641137_pr.Designer.cs">
+      <DependentUpon>201502230641137_pr.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502221351266_registration.cs" />
-    <Compile Include="Migrations\201502221351266_registration.Designer.cs">
-      <DependentUpon>201502221351266_registration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502221443266_registration3.cs" />
-    <Compile Include="Migrations\201502221443266_registration3.Designer.cs">
-      <DependentUpon>201502221443266_registration3.cs</DependentUpon>
+    <Compile Include="Migrations\201502230706467_dbupdate.cs" />
+    <Compile Include="Migrations\201502230706467_dbupdate.Designer.cs">
+      <DependentUpon>201502230706467_dbupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -319,14 +315,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502211646427_Db1.resx">
-      <DependentUpon>201502211646427_Db1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502230641137_pr.resx">
+      <DependentUpon>201502230641137_pr.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502221351266_registration.resx">
-      <DependentUpon>201502221351266_registration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502221443266_registration3.resx">
-      <DependentUpon>201502221443266_registration3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502230706467_dbupdate.resx">
+      <DependentUpon>201502230706467_dbupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

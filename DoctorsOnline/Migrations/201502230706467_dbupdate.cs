@@ -3,7 +3,7 @@ namespace DoctorsOnline.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class registration : DbMigration
+    public partial class dbupdate : DbMigration
     {
         public override void Up()
         {

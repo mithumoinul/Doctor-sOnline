@@ -3,7 +3,7 @@ namespace DoctorsOnline.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Db1 : DbMigration
+    public partial class pr : DbMigration
     {
         public override void Up()
         {
@@ -174,37 +174,6 @@ namespace DoctorsOnline.Migrations
                 .PrimaryKey(t => t.PrescriptionId);
             
             CreateTable(
-                "dbo.UserInfo",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Age = c.Int(nullable: false),
-                        Gender = c.String(),
-                        NId = c.Int(nullable: false),
-                        Address = c.String(),
-                        Phone = c.String(),
-                        CreateDate = c.DateTime(nullable: false),
-                        ActionDate = c.DateTime(nullable: false),
-                        IsActive = c.Boolean(nullable: false),
-                        UserId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.User", t => t.UserId)
-                .Index(t => t.UserId);
-            
-            CreateTable(
-                "dbo.User",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        UserName = c.String(),
-                        Email = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.UserPassword",
                 c => new
                     {
@@ -212,11 +181,8 @@ namespace DoctorsOnline.Migrations
                         SlNo = c.Int(nullable: false),
                         Password = c.String(),
                         CreateDate = c.DateTime(nullable: false),
-                        UserId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.User", t => t.UserId)
-                .Index(t => t.UserId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.UserRole",
@@ -227,19 +193,13 @@ namespace DoctorsOnline.Migrations
                         CreateDate = c.DateTime(nullable: false),
                         ActionDate = c.DateTime(nullable: false),
                         IsActive = c.Boolean(nullable: false),
-                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.User", t => t.User_Id)
-                .Index(t => t.User_Id);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserRole", "User_Id", "dbo.User");
-            DropForeignKey("dbo.UserPassword", "UserId", "dbo.User");
-            DropForeignKey("dbo.UserInfo", "UserId", "dbo.User");
             DropForeignKey("dbo.Location", "DoctorsInfoId", "dbo.DoctorsInfo");
             DropForeignKey("dbo.Location", "ThanaId", "dbo.Thana");
             DropForeignKey("dbo.Thana", "DistrictId", "dbo.District");
@@ -254,9 +214,6 @@ namespace DoctorsOnline.Migrations
             DropForeignKey("dbo.DoctorsInfo", "ChamberId", "dbo.Chamber");
             DropForeignKey("dbo.Appointment", "DoctorsInfo_Id", "dbo.DoctorsInfo");
             DropForeignKey("dbo.Appointment", "ChamberId", "dbo.Chamber");
-            DropIndex("dbo.UserRole", new[] { "User_Id" });
-            DropIndex("dbo.UserPassword", new[] { "UserId" });
-            DropIndex("dbo.UserInfo", new[] { "UserId" });
             DropIndex("dbo.Thana", new[] { "DistrictId" });
             DropIndex("dbo.District", new[] { "DivisionId" });
             DropIndex("dbo.Location", new[] { "ThanaId" });
@@ -273,8 +230,6 @@ namespace DoctorsOnline.Migrations
             DropIndex("dbo.Appointment", new[] { "HospitalId" });
             DropTable("dbo.UserRole");
             DropTable("dbo.UserPassword");
-            DropTable("dbo.User");
-            DropTable("dbo.UserInfo");
             DropTable("dbo.Prescription");
             DropTable("dbo.Thana");
             DropTable("dbo.Division");
