@@ -176,13 +176,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502230641137_pr.cs" />
-    <Compile Include="Migrations\201502230641137_pr.Designer.cs">
-      <DependentUpon>201502230641137_pr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502230706467_dbupdate.cs" />
-    <Compile Include="Migrations\201502230706467_dbupdate.Designer.cs">
-      <DependentUpon>201502230706467_dbupdate.cs</DependentUpon>
+    <Compile Include="Migrations\201502231444518_test0303.cs" />
+    <Compile Include="Migrations\201502231444518_test0303.Designer.cs">
+      <DependentUpon>201502231444518_test0303.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -315,11 +311,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502230641137_pr.resx">
-      <DependentUpon>201502230641137_pr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502230706467_dbupdate.resx">
-      <DependentUpon>201502230706467_dbupdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502231444518_test0303.resx">
+      <DependentUpon>201502231444518_test0303.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,7 +3,7 @@ namespace DoctorsOnline.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class pr : DbMigration
+    public partial class test0303 : DbMigration
     {
         public override void Up()
         {
