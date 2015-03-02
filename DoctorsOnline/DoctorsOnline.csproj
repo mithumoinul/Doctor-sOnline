@@ -195,6 +195,8 @@
     <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Thana.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Models\UserPassword.cs" />
     <Compile Include="Models\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

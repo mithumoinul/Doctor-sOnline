@@ -20,7 +20,7 @@ namespace DoctorsOnline
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<IdentityDbContext>(null);
+            //Database.SetInitializer<DoctorsOnlineContext>(null);
         }
     }
 }
