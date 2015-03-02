@@ -11,6 +11,7 @@ namespace Model
     {
         public int Id { get; set; }
         public int SlNo { get; set; }
+        
         public string Password { get; set; }
         public DateTime CreateDate { get; set; }
         

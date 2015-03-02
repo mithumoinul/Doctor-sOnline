@@ -161,24 +161,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AppointmentsController.cs" />
-    <Compile Include="Controllers\ChambersController.cs" />
-    <Compile Include="Controllers\DepartmentsController.cs" />
-    <Compile Include="Controllers\DistrictsController.cs" />
-    <Compile Include="Controllers\DivisionsController.cs" />
-    <Compile Include="Controllers\DoctorsInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HospitalsController.cs" />
-    <Compile Include="Controllers\LocationController.cs" />
-    <Compile Include="Controllers\OrganizationsController.cs" />
-    <Compile Include="Controllers\PrescriptionController.cs" />
-    <Compile Include="Controllers\ThanasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502231444518_test0303.cs" />
-    <Compile Include="Migrations\201502231444518_test0303.Designer.cs">
-      <DependentUpon>201502231444518_test0303.cs</DependentUpon>
+    <Compile Include="Migrations\201503020450430_exp.cs" />
+    <Compile Include="Migrations\201503020450430_exp.Designer.cs">
+      <DependentUpon>201503020450430_exp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503020502333_exp2.cs" />
+    <Compile Include="Migrations\201503020502333_exp2.Designer.cs">
+      <DependentUpon>201503020502333_exp2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -313,8 +306,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502231444518_test0303.resx">
-      <DependentUpon>201502231444518_test0303.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503020450430_exp.resx">
+      <DependentUpon>201503020450430_exp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503020502333_exp2.resx">
+      <DependentUpon>201503020502333_exp2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

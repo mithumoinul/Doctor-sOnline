@@ -13,12 +13,22 @@ namespace Model
     public class DoctorsInfo
     {
      
+        [Key]
+        //[ScaffoldColumn(false)]
         public int Id { get; set; }
+        [Required(ErrorMessage = "Doctor's name required")]
+        [DisplayName("Doctor's Name :")]
         public string DoctorName { get; set; }
         public string Qualification { get; set; }
         public string Designation { get; set; }
+        [DisplayName("Specialist In :")]
+        public string Specialist { get; set; }
+        public string Experience { get; set; }
         public string Gender { get; set; }
+        [StringLength(12,ErrorMessage = "Phone number is not valid")]
         public string Phone { get; set; }
+        [Required(ErrorMessage = "Please enter a valid e-mail address")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         
         [DataType(DataType.Time)]
