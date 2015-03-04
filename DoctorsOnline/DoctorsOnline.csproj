@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DoctorsInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -172,6 +173,10 @@
     <Compile Include="Migrations\201503020502333_exp2.cs" />
     <Compile Include="Migrations\201503020502333_exp2.Designer.cs">
       <DependentUpon>201503020502333_exp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503031414556_navigation.cs" />
+    <Compile Include="Migrations\201503031414556_navigation.Designer.cs">
+      <DependentUpon>201503031414556_navigation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -294,6 +299,11 @@
     <Content Include="Views\Location\Details.cshtml" />
     <Content Include="Views\Location\Edit.cshtml" />
     <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\DoctorsInfo\Create.cshtml" />
+    <Content Include="Views\DoctorsInfo\Delete.cshtml" />
+    <Content Include="Views\DoctorsInfo\Details.cshtml" />
+    <Content Include="Views\DoctorsInfo\Edit.cshtml" />
+    <Content Include="Views\DoctorsInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503020502333_exp2.resx">
       <DependentUpon>201503020502333_exp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503031414556_navigation.resx">
+      <DependentUpon>201503031414556_navigation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

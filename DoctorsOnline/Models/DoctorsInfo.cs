@@ -41,19 +41,22 @@ namespace Model
         [Display(Name="Visit End")]
         public DateTime VisitEndTime { get; set; }
 
-        public int HospitalId { get; set; }
-        [ForeignKey("HospitalId")]
+
+#region nevigation 
+        //public int HospitalId { get; set; }
+        //[ForeignKey("HospitalId")]
         public virtual Hospital Hospital { get; set; }
-        public int DepartmentId { get; set; }
-        [ForeignKey("DepartmentId")]
+        //public int DepartmentId { get; set; }
+        //[ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
-        public int ChamberId { get; set; }
-        [ForeignKey("ChamberId")]
+        //public int ChamberId { get; set; }
+        //[ForeignKey("ChamberId")]
         public virtual Chamber Chamber { get; set; }
         public ICollection<Location> Locations { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
 
 
+#endregion 
     }
 
 }
