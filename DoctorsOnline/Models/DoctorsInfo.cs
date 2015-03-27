@@ -17,11 +17,11 @@ namespace Model
         //[ScaffoldColumn(false)]
         public int Id { get; set; }
         [Required(ErrorMessage = "Doctor's name required")]
-        [DisplayName("Doctor's Name :")]
+        [DisplayName("Doctor's Name")]
         public string DoctorName { get; set; }
         public string Qualification { get; set; }
         public string Designation { get; set; }
-        [DisplayName("Specialist In :")]
+        [DisplayName("Specialist In")]
         public string Specialist { get; set; }
         public string Experience { get; set; }
         public string Gender { get; set; }
